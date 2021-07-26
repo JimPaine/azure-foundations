@@ -1084,7 +1084,7 @@
         }
       ]
     },
-    "id": "/providers/Microsoft.Authorization/policySetDefinitions/89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
+    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
     "name": "89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
     "type": "Microsoft.Authorization/policyDefinitions"
   }

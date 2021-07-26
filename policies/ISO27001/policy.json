@@ -1084,7 +1084,7 @@
         }
       ]
     },
-    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/ISO27001",
+    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policySetDefinitions/ISO27001",
     "name": "ISO27001",
-    "type": "Microsoft.Authorization/policyDefinitions"
+    "type": "Microsoft.Authorization/policySetDefinitions"
   }

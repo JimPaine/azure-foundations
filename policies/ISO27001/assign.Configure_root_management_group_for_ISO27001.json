@@ -8,7 +8,7 @@
      "description": "Configure root management group for ISO27001",
      "enforcementMode": "Default"
     },
-    "id": "/providers/Microsoft.Management/managementGroups/calastone/providers/Microsoft.Authorization/policyAssignments/ISO27001-azurefoundation",
+    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyAssignments/ISO27001-azurefoundation",
     "type": "Microsoft.Authorization/policyAssignments",
     "name": "ISO27001-azurefoundation",
     "location": "uksouth"

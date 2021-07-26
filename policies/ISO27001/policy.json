@@ -1,7 +1,7 @@
 {
     "properties": {
       "displayName": "ISO 27001:2013",
-      "policyType": "BuiltIn",
+      "policyType": "Custom",
       "description": "This initiative includes audit and virtual machine extension deployment policies that address a subset of ISO 27001:2013 controls. Additional policies will be added in upcoming releases. For more information, visit https://aka.ms/iso27001-init.",
       "metadata": {
         "version": "4.0.2",
@@ -1084,7 +1084,7 @@
         }
       ]
     },
-    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
-    "name": "89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
+    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/ISO27001",
+    "name": "ISO27001",
     "type": "Microsoft.Authorization/policyDefinitions"
   }

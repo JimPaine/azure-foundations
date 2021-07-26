@@ -1,7 +1,7 @@
 {
     "properties": {
      "displayName": "Configure root management group for ISO27001",
-     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
+     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/ISO27001",
      "scope": "/providers/Microsoft.Management/managementGroups/azurefoundation",
      "notScopes": [],
      "parameters": {},
@@ -12,4 +12,4 @@
     "type": "Microsoft.Authorization/policyAssignments",
     "name": "ISO27001-azurefoundation",
     "location": "uksouth"
-   }
+}

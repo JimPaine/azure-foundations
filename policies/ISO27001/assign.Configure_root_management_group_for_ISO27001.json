@@ -1,4 +1,11 @@
 {
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "identity": {
+        "type": "SystemAssigned"
+    },
     "properties": {
      "displayName": "Configure root management group for ISO27001",
      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policySetDefinitions/ISO27001",

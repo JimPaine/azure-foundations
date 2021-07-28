@@ -25,7 +25,7 @@ While the following items are out of scope there are some examples included in t
 
 ### Needed for management groups and subscription placement
 
-> :warning: ideally only use this as a manual step via PIM and role back once finished with it.
+> :warning: ideally only use this as a manual step via PIM and roll back once finished with it.
 
 ```
 az role assignment create  --scope '/' --role 'Owner' --assignee-object-id $(az ad signed-in-user show --query objectId -o tsv)

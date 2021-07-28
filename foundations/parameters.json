@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "rootGroupName": {
+        "value": "azurefoundation"
+      },
+      "location": {
+        "value": "uksouth"
+      },
+      "rootPolicies": {
+        "value": [
+            {
+                "name": "name for assignment",
+                "policyId": "Id of built in policy set definition (see readme)"
+            }
+        ]
+      },
+      "landingZones": {
+          "value": {
+                "groups": [
+                    {
+                      "name": "platform",
+                      "subscriptions": [
+                        "guid for sub1"
+                      ],
+                      "policies": [
+                        {
+                            "name": "name for assignment",
+                            "policyId": "Id of built in policy set definition (see readme)"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "spokes mg name",
+                      "subscriptions": [
+                        "guid for sub2",
+                        "guid for sub3"
+                      ],
+                      "policies": []
+                    }
+                ]
+            }
+        }
+    }
+}

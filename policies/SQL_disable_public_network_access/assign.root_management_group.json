@@ -1,0 +1,22 @@
+{
+    "sku": {
+     "name": "A0",
+     "tier": "Free"
+    },
+    "identity": {
+     "type": "SystemAssigned"
+    },
+    "properties": {
+     "displayName": "Configure Azure SQL Server to disable public network access",
+     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyDefinitions/Azure-SQL-Disable-Public-Access",
+     "scope": "/providers/Microsoft.Management/managementGroups/azurefoundation",
+     "notScopes": [],
+     "parameters": {},
+     "description": "Disable public network access on all Azure SQL Instances",
+     "enforcementMode": "Default"
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/azurefoundation/providers/Microsoft.Authorization/policyAssignments/Azure-SQL-Deny-Public",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "Azure-SQL-Deny-Public",
+    "location": "uksouth"
+   }

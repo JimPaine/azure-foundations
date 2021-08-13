@@ -23,39 +23,4 @@ While the following items are out of scope there are some examples included in t
 
 ## Roles
 
-### Needed for management groups and subscription placement
-
-> :warning: ideally only use this as a manual step via PIM and roll back once finished with it.
-
-```
-az role assignment create  --scope '/' --role 'Owner' --assignee-object-id $(az ad signed-in-user show --query objectId -o tsv)
-
-```
-
-### Needed for additional policy assignments ontop of foundation policies.
-
-```
-az ad sp create-for-rbac --name "policyManager" --sdk-auth
-```
-
-```
-az role assignment create  --scope '/providers/Microsoft.Management/managementGroups/azurefoundation' --role 'Resource Policy Contributor' --assignee-object-id {id}
-```
-
-```
-az ad sp create-for-rbac \
-  --name "policyManager" \
-  --role "Resource Policy Contributor" \
-  --scopes  "/providers/Microsoft.Management/managementGroups/azurefoundation" \
-  --sdk-auth
-```
-
-### deployment
-
-```
-az deployment tenant create \
-  --name azure-foundations \
-  --location "uksouth" \
-  --template-file ./foundations/main.bicep \
-  --parameters @./foundations/parameters.json
-```
+> To be updated

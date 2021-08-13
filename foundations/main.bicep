@@ -1,4 +1,4 @@
-targetScope = 'tenant'
+targetScope = 'managementGroup'
 
 param rootGroupName string = 'azurefoundation'
 param location string = 'uksouth'
@@ -7,17 +7,15 @@ param landingZones object
 
 resource root_group 'Microsoft.Management/managementGroups@2021-04-01' = {
   name: rootGroupName
+  scope: tenant()
 }
 
-resource root_assignments 'Microsoft.Authorization/policyAssignments@2019-09-01' = [for policy in rootPolicies: {
-  name: policy.name
-  location: location
-  scope: root_group
-  properties: {
-      policyDefinitionId: policy.policyId
-  }
-  identity: {
-    type: 'SystemAssigned'
+module root_policies './policy-assignment.bicep' = [for (policy, i) in rootPolicies: {
+  name: 'policy${i}'
+  scope: managementGroup(root_group.name)
+  params: {
+    policy: policy
+    location: location
   }
 }]
 

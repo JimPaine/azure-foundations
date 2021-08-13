@@ -1,4 +1,4 @@
-targetScope = 'tenant'
+targetScope = 'managementGroup'
 
 param groupName string
 param parentId string
@@ -8,6 +8,7 @@ param location string
 
 resource management_group 'Microsoft.Management/managementGroups@2021-04-01' = {
   name: groupName
+  scope: tenant()
 
   properties: {
     displayName: groupName
@@ -17,21 +18,17 @@ resource management_group 'Microsoft.Management/managementGroups@2021-04-01' = {
       }
     }
   }
+
+  resource subscription_move 'subscriptions@2021-04-01' = [for sub in subscriptions: {
+    name: sub
+  }]
 }
 
-resource subscription_move 'Microsoft.Management/managementGroups/subscriptions@2021-04-01' = [for sub in subscriptions: {
-  name: sub
-  parent: management_group
-}]
-
-resource root_assignments 'Microsoft.Authorization/policyAssignments@2019-09-01' = [for policy in policies: {
-  name: policy.name
-  location: location
-  scope: management_group
-  properties: {
-      policyDefinitionId: policy.policyId
-  }
-  identity: {
-    type: 'SystemAssigned'
+module root_policies './policy-assignment.bicep' = [for (policy, i) in policies: {
+  name: 'policy${i}${management_group.name}'
+  scope: managementGroup(management_group.name)
+  params: {
+    policy: policy
+    location: location
   }
 }]
